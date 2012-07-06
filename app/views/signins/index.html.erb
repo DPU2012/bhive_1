@@ -1,0 +1,55 @@
+
+
+
+
+
+
+<clearfix>
+<div id="login">
+<%= form_for @signin, :action => :create do |f| %>
+	<div id="pic1">
+	</div>
+
+	<div id="logintitle">
+		<b> Sign In to B-hive </b>
+	</div>
+
+<div id="loginbox">
+	
+	<ul>
+		<li>
+		<a>Username:</a> 
+		</li>
+		<li>  &nbsp  </li>
+		<li>
+		<%= f.text_field :username %>
+		</li>
+		<li>  &nbsp  </li>
+		<li>
+		<a> Password:</a> 
+		</li>
+		<li>  &nbsp  </li>
+		<li>
+		<%= f.text_field :password %>
+		</li>
+	</ul>
+	<div id="signin">
+		<c><%= f.submit "Sign In" %> </c> <br/>
+		
+	</div>
+	<ul>	
+	<h3><li> <u> <%= link_to 'Register', :controller => 'signups', :action => :index %></u> | <u> Forgot your password ? </u> </li></h3>
+
+	</ul>
+
+   
+</div>
+
+</div>
+<% end %>
+
+
+
+
+
+<clearfix/>

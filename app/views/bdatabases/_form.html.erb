@@ -1,0 +1,25 @@
+<%= form_for(@bdatabase) do |f| %>
+  <% if @bdatabase.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bdatabase.errors.count, "error") %> prohibited this bdatabase from being saved:</h2>
+
+      <ul>
+      <% @bdatabase.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :mtype %><br />
+    <%= f.text_field :mtype %>
+  </div>
+  <div class="field">
+    <%= f.label :msg %><br />
+    <%= f.text_field :msg %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

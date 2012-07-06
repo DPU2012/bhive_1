@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Bhive!</title>
+    <%= stylesheet_link_tag 'signin', :media => :screen %>
+  </head>
+  
+  <body>
+  	<clearfix>
+	<div id=signup>
+		<b>Sign up for B-hive</b>
+	</div>
+		<%= form_for @signup, :action => :create do |f| %>
+
+		<div id=signupbox>
+		<ul><d>
+			<li> First Name: </d> <%= f.text_field :first_name %> <br/></li>
+			<li>  &nbsp  </li>
+			<li>Last Name: <%= f.text_field :last_name %> <br/></li>
+			<li>  &nbsp  </li>
+			Your Email: <%= f.text_field :email %> <br/>
+			<li>  &nbsp  </li>
+			Re-enter Email: <%= f.text_field :retype_email %> <br/>
+			<li>  &nbsp  </li>
+			Password: <%= f.text_field :password %> <br/>
+			<li>  &nbsp  </li>			
+			Re-enter Password: <%= f.text_field :retype_password %> <br/>
+			<li>  &nbsp  </li>
+			I am <%= f.select :sex, options_for_select([['Select Gender', ''],['Male','m'],['Female','f']]) %><br />
+			<li>  &nbsp  </li>
+			Birthday: <br/>
+			<li>  &nbsp  </li>
+
+			Parent's or child's email:
+			<%= f.text_field :email2 %> <br/>
+			<li>  &nbsp  </li>		
+			</d>	
+		</ul>
+			<%= f.submit "Submit" %> <br/>
+		</div>
+
+		<% end %>
+	
+
+    </clearfix>
+  </body>
+</html>

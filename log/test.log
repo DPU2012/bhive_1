@@ -1,0 +1,181 @@
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.4ms)[0m  DELETE FROM "signups"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-06-29 14:11:13', '2012-06-29 14:11:13', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-06-29 14:11:13', '2012-06-29 14:11:13', 298486374)
+  [1m[36m (24.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SignupController#create as HTML
+  Rendered signup/create.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 58ms (Views: 57.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SignupController#index as HTML
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.3ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "signups"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-06-29 15:01:00', '2012-06-29 15:01:00', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-06-29 15:01:00', '2012-06-29 15:01:00', 298486374)
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SignupController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (68.5ms)[0m  INSERT INTO "signups" ("birthday", "created_at", "email", "email2", "first_name", "last_name", "password", "retype_email", "retype_password", "sex", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["birthday", nil], ["created_at", Fri, 29 Jun 2012 15:01:00 UTC +00:00], ["email", nil], ["email2", nil], ["first_name", nil], ["last_name", nil], ["password", nil], ["retype_email", nil], ["retype_password", nil], ["sex", nil], ["updated_at", Fri, 29 Jun 2012 15:01:00 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  Rendered signup/create.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 103ms (Views: 16.8ms | ActiveRecord: 68.8ms)
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SignupController#index as HTML
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "signins"
+  [1m[36mFixture Insert (0.5ms)[0m  [1mINSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:10:40', '2012-07-02 20:10:40', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:10:40', '2012-07-02 20:10:40', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "signups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:10:40', '2012-07-02 20:10:40', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:10:40', '2012-07-02 20:10:40', 298486374)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#create as HTML
+  Rendered signins/create.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 13.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#index as HTML
+Completed 500 Internal Server Error in 39ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#show as HTML
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (78.6ms)[0m  [1mINSERT INTO "signups" ("birthday", "created_at", "email", "email2", "first_name", "last_name", "password", "retype_email", "retype_password", "sex", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["birthday", nil], ["created_at", Mon, 02 Jul 2012 20:10:40 UTC +00:00], ["email", nil], ["email2", nil], ["first_name", nil], ["last_name", nil], ["password", nil], ["retype_email", nil], ["retype_password", nil], ["sex", nil], ["updated_at", Mon, 02 Jul 2012 20:10:40 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 99ms (Views: 4.9ms | ActiveRecord: 78.9ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SignupsController#index as HTML
+Completed 500 Internal Server Error in 11ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SignupsController#show as HTML
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "signins"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:12:10', '2012-07-02 20:12:10', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:12:10', '2012-07-02 20:12:10', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "signups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:12:10', '2012-07-02 20:12:10', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:12:10', '2012-07-02 20:12:10', 298486374)[0m
+  [1m[35m (1.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#create as HTML
+  Rendered signins/create.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#index as HTML
+Completed 500 Internal Server Error in 38ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#show as HTML
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (36.1ms)[0m  [1mINSERT INTO "signups" ("birthday", "created_at", "email", "email2", "first_name", "last_name", "password", "retype_email", "retype_password", "sex", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["birthday", nil], ["created_at", Mon, 02 Jul 2012 20:12:10 UTC +00:00], ["email", nil], ["email2", nil], ["first_name", nil], ["last_name", nil], ["password", nil], ["retype_email", nil], ["retype_password", nil], ["sex", nil], ["updated_at", Mon, 02 Jul 2012 20:12:10 UTC +00:00]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 200 OK in 57ms (Views: 5.5ms | ActiveRecord: 36.4ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SignupsController#index as HTML
+Completed 500 Internal Server Error in 10ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Processing by SignupsController#show as HTML
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "signins"
+  [1m[36mFixture Insert (30.9ms)[0m  [1mINSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:51:50', '2012-07-02 20:51:50', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 20:51:50', '2012-07-02 20:51:50', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "signups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:51:51', '2012-07-02 20:51:51', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 20:51:51', '2012-07-02 20:51:51', 298486374)[0m
+  [1m[35m (19.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (42.1ms)[0m  [1mINSERT INTO "signins" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 02 Jul 2012 20:51:51 UTC +00:00], ["password", nil], ["updated_at", Mon, 02 Jul 2012 20:51:51 UTC +00:00], ["username", nil]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered signins/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 292ms (Views: 240.1ms | ActiveRecord: 42.3ms)
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SigninsController#index as HTML
+Completed 500 Internal Server Error in 64ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SigninsController#show as HTML
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SignupsController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "signups" ("birthday", "created_at", "email", "email2", "first_name", "last_name", "password", "retype_email", "retype_password", "sex", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["birthday", nil], ["created_at", Mon, 02 Jul 2012 20:51:51 UTC +00:00], ["email", nil], ["email2", nil], ["first_name", nil], ["last_name", nil], ["password", nil], ["retype_email", nil], ["retype_password", nil], ["sex", nil], ["updated_at", Mon, 02 Jul 2012 20:51:51 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 19ms (Views: 3.7ms | ActiveRecord: 0.9ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#index as HTML
+Completed 500 Internal Server Error in 11ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#show as HTML
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.3ms)[0m  DELETE FROM "signins"
+  [1m[36mFixture Insert (0.2ms)[0m  [1mINSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 21:53:14', '2012-07-02 21:53:14', 980190962)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signins" ("username", "password", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', '2012-07-02 21:53:14', '2012-07-02 21:53:14', 298486374)
+  [1m[36mFixture Delete (0.1ms)[0m  [1mDELETE FROM "signups"[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 21:53:14', '2012-07-02 21:53:14', 980190962)
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "signups" ("first_name", "last_name", "email", "retype_email", "password", "retype_password", "sex", "birthday", "email2", "created_at", "updated_at", "id") VALUES ('MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', 'MyString', '2012-07-02 21:53:14', '2012-07-02 21:53:14', 298486374)[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SigninsController#create as HTML
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (52.0ms)[0m  [1mINSERT INTO "signins" ("created_at", "password", "updated_at", "username") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 02 Jul 2012 21:53:14 UTC +00:00], ["password", nil], ["updated_at", Mon, 02 Jul 2012 21:53:14 UTC +00:00], ["username", nil]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  Rendered signins/show.html.erb within layouts/application (206.4ms)
+Completed 200 OK in 287ms (Views: 225.4ms | ActiveRecord: 52.4ms)
+  [1m[36m (115.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SigninsController#index as HTML
+Completed 200 OK in 43ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SigninsController#show as HTML
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by SignupsController#create as HTML
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "signups" ("birthday", "created_at", "email", "email2", "first_name", "last_name", "password", "retype_email", "retype_password", "sex", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["birthday", nil], ["created_at", Mon, 02 Jul 2012 21:53:15 UTC +00:00], ["email", nil], ["email2", nil], ["first_name", nil], ["last_name", nil], ["password", nil], ["retype_email", nil], ["retype_password", nil], ["sex", nil], ["updated_at", Mon, 02 Jul 2012 21:53:15 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 27ms (Views: 6.3ms | ActiveRecord: 1.1ms)
+  [1m[35m (0.6ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#index as HTML
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Processing by SignupsController#show as HTML
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

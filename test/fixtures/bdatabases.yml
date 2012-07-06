@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  mtype: MyString
+  msg: MyString
+
+two:
+  mtype: MyString
+  msg: MyString
