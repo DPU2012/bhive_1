@@ -139,11 +139,11 @@ end
 
   def home
   
-
+	@id = @@wall.get_object("me")["username"]
 	@wall = @@wall
 	@bayes = @@bayes
-	@wallsource = @wall.get_connections("yechan.j.hong", "feed")
-	@self = @wall.get_object("yechan.j.hong")
+	@wallsource = @wall.get_connections(@id, "feed")
+	@self = @wall.get_object(@id)
   end
   
   def feed
@@ -165,7 +165,7 @@ end
   end
   private      
   def start_filter
-  
+	session.clear
     @@facebook_cookies ||= Koala::Facebook::OAuth.new('393160320721597', 'bbaf9cd1aa2c6716d786c99cbfd875f9','http://localhost:3000/website/signin').get_user_info_from_cookie(cookies)
 	@@access_token = @@facebook_cookies["access_token"]
 	@@wall = Koala::Facebook::API.new(@@access_token)
