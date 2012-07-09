@@ -1,13 +1,20 @@
 Bhive1::Application.routes.draw do
  
  
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/failure"
+
   resources :bdatabases
 
   resources :msgs
-
+post 'routes/postToWall' => 'website#postToWall', :as => :find
   get "website/home"
   get "website/feed"
   get "website/train"
+  post "website/postToWall"
   get "signins/index"
 
   post "signins/create"
@@ -23,6 +30,11 @@ Bhive1::Application.routes.draw do
   resources :signups
   resources :signins
   resources :bdatabases
+
+  
+  get   '/login', :to => 'sessions#new', :as => :login
+match '/auth/:provider/callback', :to => 'sessions#create'
+match '/auth/failure', :to => 'sessions#failure'
 
   match "/signup", to: 'signups#index'
   match "/signin", to: 'signins#index'

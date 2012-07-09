@@ -1,9 +1,13 @@
 
+<%= link_to "Log in with Facebook", "/auth/facebook" %>
+
 
 <div id="logintitle">
 <b>FEED</b>
 </div>
-<%(0..10).each do |i|%>
+
+<%=@test%>
+<%(2..7).each do |i|%>
 
 <%if @wallsource[i]["message"] != nil%>	
 <table style="background-color:#33CCCC;width:100%;">

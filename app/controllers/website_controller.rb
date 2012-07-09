@@ -140,38 +140,42 @@ end
   def home
   
 
-	@graph = Koala::Facebook::API.new
 	@wall = @@wall
 	@bayes = @@bayes
-	
 	@wallsource = @wall.get_connections("yechan.j.hong", "feed")
-	@self = @graph.get_object("yechan.j.hong")
+	@self = @wall.get_object("yechan.j.hong")
   end
   
   def feed
-	
-	@test = @@bayes.nbbase
-	
-	@graph = Koala::Facebook::API.new
-	@wall = @@wall
 
+
+	@wall = @@wall
 	@bayes =@@bayes
 	@wallsource = @wall.get_connections("yechan.j.hong", "home")
-	@self = @graph.get_object("yechan.j.hong")
+	@self = @wall.get_object("yechan.j.hong")
   end
   
   def train
 	@@bayes.train("bullying",params[:message])	
 	@test =@@bayes.bbase
   end
+  def postToWall
+	@message = params[:message][:text]
+	@@wall.put_wall_post(@message)
+  end
   private      
   def start_filter
-	@@wall = Koala::Facebook::API.new('AAAAAAITEghMBANALJ8pwvhPidNAoVM3RmAcwRk7ZBhLCX9ZBuHImcYIZBZC9ZCZA1yEEWjqeuZBWRYff6PfzVR4SAtmfs8FntP1OJKZAE8yhSGtqy5dZC4iGB')
+  
+    @@facebook_cookies ||= Koala::Facebook::OAuth.new('393160320721597', 'bbaf9cd1aa2c6716d786c99cbfd875f9','http://localhost:3000/website/signin').get_user_info_from_cookie(cookies)
+	@@access_token = @@facebook_cookies["access_token"]
+	@@wall = Koala::Facebook::API.new(@@access_token)
 	@@bayes = Filter.new
 	database = Bdatabase.all
 	(0..database.size-1).each do |i|
 		@@bayes.train(database[i].mtype,database[i].msg)
 	end
   end
+  
+
 
 end

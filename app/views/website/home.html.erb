@@ -6,7 +6,7 @@
 <table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;">
 
 <tr>
-<th><%= image_tag @graph.get_picture("yechan.j.hong")%></th>
+<th><%= image_tag @wall.get_picture("yechan.j.hong")%></th>
 <th width="80%"><h3><%=@self["name"]%></h3></th>
 </tr>
 
@@ -26,13 +26,24 @@
 
 
 
+<%=form_tag('postToWall', :method => :postToWall) do%>
 
+
+  
+
+	<table style="background-color:#33CCCC;width:100%;"
+	<tr>
+	<th><%= label_tag(:message, "Post a Message:") %><%=text_area(:message, :text, :size => "60x10")%>  </th>
+	<th width="80%">	<%=submit_tag("POST")%></th>
+	</tr>
+	</table>
+<%end%>
 <%(1..6).each do |i|%>
 
 <%if @wallsource[i]["message"] != nil%>	
 	<table style="background-color:#33CCCC;width:100%;"
 	<tr>
-	<th>FROM:  <%=  image_tag @graph.get_picture(@graph.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
+	<th>FROM:  <%=  image_tag @wall.get_picture(@wall.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
 	<th width="80%"><h3><%=@wallsource[i]["from"]["name"]%> </h3></th>
 	</tr>
 	<tr>
