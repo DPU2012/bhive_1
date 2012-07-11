@@ -2,13 +2,13 @@
 <div id="logintitle">
 <b>User Profile</b>
 </div>
-
+<br/>
 
 <table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;"><table style="background-color:#33CCCC;width:100%;">
 
 <tr>
 <th><%= image_tag @wall.get_picture(@id)%></th>
-<th width="80%"><h3><%=@self["name"]%></h3></th>
+<th width="80%" align="left"><h3><%=@self["name"]%></h3></th>
 </tr>
 
 <tr>
@@ -25,31 +25,32 @@
 <b>My WALL</b>
 </div>
 
+<br/>
 
 
-<%=form_tag('postToWall', :method => :postToWall) do%>
 
 
-  
 
-	<table style="background-color:#33CCCC;width:100%;"
+	<table style="background-color:#33CCCC;width:100%;">
+	<%=form_tag('postToWall', :method => :postToWall) do%>
 	<tr>
 	<th><%= label_tag(:message, "Post a Message:") %><%=text_area(:message, :text, :size => "60x10")%>  </th>
 	<th width="80%">	<%=submit_tag("POST")%></th>
 	</tr>
+	<%end%>
 	</table>
-<%end%>
-<%(0..2).each do |i|%>
+
+<%(0..6).each do |i|%>
 
 <%if @wallsource[i]["message"] != nil%>	
 	<table style="background-color:#33CCCC;width:100%;"
 	<tr>
 	<th>FROM:  <%=  image_tag @wall.get_picture(@wall.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
-	<th width="80%"><h3><%=@wallsource[i]["from"]["name"]%> </h3></th>
+	<th width="80%" align="left"><h3><%=@wallsource[i]["from"]["name"]%> </h3></th>
 	</tr>
 	<tr>
 	<td><h3>Message: <%=@wallsource[i]["message"]%></h3></td>
-	<td width="80%">Created Time: <%=@wallsource[i]["created_time"]%> 
+	<td width="80%" align="left">Created Time: <%=@wallsource[i]["created_time"]%> 
 	<br/> Bullying Rating: <%=@bayes.findP(@wallsource[i]["message"])%>
 	<br/>	<%= link_to 'Flag as bullying', new_bdatabase_path(:msg=>@wallsource[i]["message"], :mtype=>"bullying")%></td>
 	</tr>

@@ -6,25 +6,24 @@
 <b>FEED</b>
 </div>
 
-<%=@test%>
-<%(2..7).each do |i|%>
-
-<%if @wallsource[i]["message"] != nil%>	
-<table style="background-color:#33CCCC;width:100%;">
-	<tr>
-	<th>FROM:  <%=  image_tag @graph.get_picture(@graph.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
-	<th width="80%"><h3><%=@wallsource[i]["from"]["name"]%> </h3></th>
-	</tr>
-	<tr>
-	<td><h3>Message: <%=@wallsource[i]["message"]%></h3></td>
-	<td width="80%">Created Time: <%=@wallsource[i]["created_time"]%>
-	<br/>  Bullying Rating: <%=@bayes.findP(@wallsource[i]["message"])%>
-	<br/>	<%= link_to 'Flag as bullying', new_bdatabase_path(:msg=>@wallsource[i]["message"], :mtype=>"bullying")%>
-	</td>
-	</tr>
+<%(0..15).each do |i|%>
+	<%if @wallsource[i] != nil && @wallsource[i]["message"] != nil%>	
+	<table style="background-color:#33CCCC;width:100%;">
+		<tr>
+			<th>FROM:  <%=  image_tag @wall.get_picture(@wall.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
+			<th width="80%" align="left"><h3><%=@wallsource[i]["from"]["name"]%> </h3></th>
+		</tr>
+		
+		<tr>
+			<td><h3>Message: <%=@wallsource[i]["message"]%></h3></td>
+			<td width="80%" align="left">Created Time: <%=@wallsource[i]["created_time"]%>
+			<br/>  Bullying Rating: <%=begin @bayes.findP(@wallsource[i]["message"]) rescue "0" end%>
+			<br/>	<%= link_to 'Flag as bullying', new_bdatabase_path(:msg=>@wallsource[i]["message"], :mtype=>"bullying")%>
+			</td>
+		</tr>
 	</table>
 
-<%end%>
+	<%end%>
 <%end%>
 	
 

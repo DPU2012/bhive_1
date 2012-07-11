@@ -3,7 +3,7 @@
 class WebsiteController < ApplicationController
 before_filter :start_filter
 class Filter
-attr_accessor :bbase, :nbbase
+attr_accessor :bbase, :nbbase, :conformList, :sensList
 
 
 def initialize
@@ -14,6 +14,18 @@ def initialize
 	nbullybase = Hash[]
 	nbullybase["count"] = 0
 	@nbbase = nbullybase
+	
+	con = Hash[]
+	con["dayum"] = "damn"
+	con["dmn"] = "damn"
+	con["damm"] = "damn"
+	@conformList = con
+	
+	sens = Hash[]
+	sens["skinny"] = 2
+	sens["skeleton"] = 3
+	sens["stick"] = 3
+	@sensList = sens
 end
 
 #pofbully
@@ -23,7 +35,7 @@ def pofbully
 	return (b)/(n*b)
 	
 end
-def findPs(word)
+def findPs(word="Emptyword")
 	bcount = 0 
 	nbcount =0
 	bwordfreq = 0
@@ -56,12 +68,12 @@ def findPs(word)
 	pword = (bwordfreq+nbwordfreq)*1.0/total
 	
 	if(pword == 0 or bwordfreq == 0)
-		return 1
+		return 1+sensitiveWords(word)
 	end
 	pwordb = (bwordfreq*1.0)/bcount
 	
 	print "#{word} #{pwordb}/#{pword}"
-	return (pwordb*1.0)/(pword)
+	return (pwordb*1.0)+sensitiveWords(word)/(pword)
 	
 end
 
@@ -109,7 +121,7 @@ def train(category, text)
 	end
 end
 
-def findP(text)
+def findP(text="nowordblank")
 	p = 1.0
 	file = StringIO.new(text,"r")
 	word =""
@@ -118,6 +130,7 @@ def findP(text)
 		char = file.getc
 		if(char == nil or char.chr == ' ' or char.eql?("\n"))
 			word = word.downcase
+			word = self.conformToken(word)
 			p = p * 1.0 * self.findPs(word)
 			puts "|||||  #{word},#{p} \n"
 			word.clear	
@@ -134,6 +147,23 @@ def findP(text)
 	return Math.log(p)
 end
 
+def sensitiveWords(token)
+
+	if @sensList[token] != nil
+		return @sensList[token]
+	else
+		return 0
+	end
+end
+
+def conformToken(token)
+	if @conformList[token] != nil
+		return @conformList[token]
+	else
+		return token
+	end
+end
+
 end
 
 
@@ -147,8 +177,6 @@ end
   end
   
   def feed
-
-
 	@wall = @@wall
 	@bayes =@@bayes
 	@wallsource = @wall.get_connections("yechan.j.hong", "home")
