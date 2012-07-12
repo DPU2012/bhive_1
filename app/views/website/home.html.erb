@@ -42,7 +42,7 @@
 
 <%(0..6).each do |i|%>
 
-<%if @wallsource[i]["message"] != nil%>	
+<%if @wallsource[i] != nil && @wallsource[i]["message"] != nil%>
 	<table style="background-color:#33CCCC;width:100%;"
 	<tr>
 	<th>FROM:  <%=  image_tag @wall.get_picture(@wall.get_object(@wallsource[i]["from"]["id"])["username"])%></th>
